@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #e9edf3;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #475569;
+  --muted2: #64748b;
+  --navy: #0b3a6a;
+  --navyStrong: #062746;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* =================================
+   GLOBAL GRID BACKGROUND
+================================= */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.09) 1px, transparent 1px);
+
+  background-size: 4rem 4rem;
+
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, #000 55%, transparent 100%);
+
+  opacity: 0.75;
+}
+
+/* =================================
+   SUBTLE GRAIN TEXTURE
+================================= */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+
+  background-size: 220px 220px;
+  opacity: 0.035;
+}
+
+/* Pastikan semua konten di atas overlay */
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(11, 58, 106, 0.18);
+  border-radius: 12px;
+}
+
+/* =================================
+   NAVBAR
+================================= */
+
+.nav-link.is-active {
+  color: var(--navy);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: -8px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--navy);
+  transition: transform 280ms ease, width 280ms ease, opacity 200ms ease;
+}
+
+/* =================================
+   MARQUEE ANIMATIONS
+================================= */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes marqueeSoft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes sheen {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marqueeReverse 22s linear infinite;
+}
+
+.animate-marquee-soft {
+  animation: marqueeSoft 22s linear infinite;
+}
+
+.animate-sheen {
+  animation: sheen 5.5s linear infinite;
+}
+
+/* =================================
+   REDUCE MOTION SUPPORT
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-marquee-soft,
+  .animate-sheen {
+    animation: none !important;
+  }
+}
+
+/* =================================
+   CENTERED SHELL LAYOUT
+================================= */
+
+.centered-shell section {
+  padding-top: clamp(2.75rem, 5vw, 4rem) !important;
+  padding-bottom: clamp(2.75rem, 5vw, 4rem) !important;
+}
+
+.centered-shell section > .mx-auto {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.centered-shell section > .mx-auto.w-full.max-w-6xl {
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.centered-shell section > .mx-auto.w-full.max-w-6xl.lg\:px-10 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* =================================
+   MOBILE PERFORMANCE OPTIMIZATION
+================================= */
+
+@media (max-width: 768px) {
+
+  /* remove heavy blur */
+
+  [class*="backdrop-blur"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* remove fixed background */
+
+  body::before,
+  body::after {
+    background-attachment: scroll !important;
+  }
+
+  /* slow animations */
+
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-marquee-soft {
+    animation-duration: 35s !important;
+  }
+
+}
+
+/* =================================
+   RENDER PERFORMANCE
+================================= */
+
+section {
+  contain: layout paint;
+}
