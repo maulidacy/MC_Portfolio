@@ -51,66 +51,66 @@ export default function Projects() {
 
   const PAGE_SIZE = 4;
 
- const projects: Project[] = useMemo(
-  () => [
+  const projects: Project[] = useMemo(
+    () => [
 
-    {
-      id: 1,
-      title: "SITEMU - Lost & Found Platform",
-      desc: "A web platform for reporting and discovering lost items within the university environment. Designed to help students reconnect with their belongings through a centralized reporting system.",
-      tags: ["Next.js", "Tailwind", "Database"],
-      imageUrl: IMG_SITEMU,
-      href: "https://sitemudinus.vercel.app/"
-    },
+      {
+        id: 1,
+        title: "SITEMU - Lost & Found Platform",
+        desc: "A web platform for reporting and discovering lost items within the university environment. Designed to help students reconnect with their belongings through a centralized reporting system.",
+        tags: ["Next.js", "Tailwind", "Database"],
+        imageUrl: IMG_SITEMU,
+        href: "https://sitemudinus.vercel.app/"
+      },
 
-    {
-      id: 2,
-      title: "TravelEase - Smart Travel Budget Planner",
-      desc: "A Machine Learning-powered travel budgeting tool that helps users estimate travel costs and plan efficient trips based on personalized preferences.",
-      tags: ["Python", "Streamlit", "Machine Learning"],
-      imageUrl: IMG_TRAVELEASE,
-      href: "https://travelease.streamlit.app/"
-    },
+      {
+        id: 2,
+        title: "TravelEase - Smart Travel Budget Planner",
+        desc: "A Machine Learning-powered travel budgeting tool that helps users estimate travel costs and plan efficient trips based on personalized preferences.",
+        tags: ["Python", "Streamlit", "Machine Learning"],
+        imageUrl: IMG_TRAVELEASE,
+        href: "https://travelease.streamlit.app/"
+      },
 
-    {
-      id: 3,
-      title: "Fiacahya Snack - E-Commerce with AI Chatbot",
-      desc: "An e-commerce website for a local snack business featuring an integrated AI chatbot that assists users in exploring products and receiving recommendations.",
-      tags: ["Next.js", "OpenAI API", "Chatbot"],
-      imageUrl: IMG_FIACAHYA,
-      href: "https://fiacahya-snack.vercel.app/"
-    },
+      {
+        id: 3,
+        title: "Fiacahya Snack - E-Commerce with AI Chatbot",
+        desc: "An e-commerce website for a local snack business featuring an integrated AI chatbot that assists users in exploring products and receiving recommendations.",
+        tags: ["Next.js", "OpenAI API", "Chatbot"],
+        imageUrl: IMG_FIACAHYA,
+        href: "https://fiacahya-snack.vercel.app/"
+      },
 
-    {
-      id: 4,
-      title: "Kos Maintenance Management System",
-      desc: "A web-based system designed to manage boarding house maintenance requests and track facility repairs efficiently.",
-      tags: ["Next.js", "CRUD", "Web App"],
-      imageUrl: IMG_KOS,
-      href: "https://kos-maintenance.vercel.app/"
-    },
+      {
+        id: 4,
+        title: "To-Do List Task Manager – Top 20 Finalist",
+        desc: "A web-based task management application built to improve productivity and task organization. This project was selected as one of the Top 20 finalists among multiple submissions, highlighting its usability and implementation quality.",
+        tags: ["JavaScript", "Frontend", "Finalist"],
+        imageUrl: IMG_TODO,
+        href: "https://glowing-sfogliatella-9b0715.netlify.app/"
+      },
 
-    {
-      id: 5,
-      title: "Temperature Converter Web App",
-      desc: "A responsive web application that converts temperature values across different units with a simple and intuitive interface.",
-      tags: ["HTML", "JavaScript", "Frontend"],
-      imageUrl: IMG_TEMP,
-      href: "https://konversisuhu-42a8bc.netlify.app/"
-    },
+      {
+        id: 5,
+        title: "Kos Maintenance Management System",
+        desc: "A web-based system designed to manage boarding house maintenance requests and track facility repairs efficiently.",
+        tags: ["Next.js", "CRUD", "Web App"],
+        imageUrl: IMG_KOS,
+        href: "https://kos-maintenance.vercel.app/"
+      },
 
-    {
-      id: 6,
-      title: "To-Do List Task Manager",
-      desc: "A lightweight task management web app that helps users organize daily activities and track productivity.",
-      tags: ["JavaScript", "Frontend"],
-      imageUrl: IMG_TODO,
-      href: "https://glowing-sfogliatella-9b0715.netlify.app/"
-    }
+      {
+        id: 6,
+        title: "Temperature Converter Web App",
+        desc: "A responsive web application that converts temperature values across different units with a simple and intuitive interface.",
+        tags: ["HTML", "JavaScript", "Frontend"],
+        imageUrl: IMG_TEMP,
+        href: "https://konversisuhu-42a8bc.netlify.app/"
+      }
 
-  ],
-  []
-);
+    ],
+    []
+  );
 
   const totalPages = Math.ceil(projects.length / PAGE_SIZE);
 
@@ -334,7 +334,10 @@ export default function Projects() {
                           {p.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="text-[9px] font-mono px-2 py-1 bg-blue-900/30 text-blue-300 rounded border border-blue-500/20"
+                              className={`text-[9px] font-mono px-2 py-1 rounded border ${tag.includes("Top")
+                                  ? "bg-yellow-500/20 text-yellow-300 border-yellow-400/30"
+                                  : "bg-blue-900/30 text-blue-300 border-blue-500/20"
+                                }`}
                             >
                               {tag}
                             </span>

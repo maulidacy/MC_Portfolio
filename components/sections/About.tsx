@@ -86,23 +86,23 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   const facts: Fact[] = useMemo(() => [
-    { label: "Location", value: "Semarang, Indonesia", icon: MapPin },
-    { label: "Focus", value: "Applied Machine Learning", icon: Brain },
-    { label: "Stack", value: "Python, Next.js, FastAPI", icon: Layers },
-    { label: "Goal", value: "ML/AI Internship", icon: Target },
+    { label: "Location", value: "Grobogan, Indonesia", icon: MapPin },
+    { label: "Focus", value: "AI Engineering & Applied ML", icon: Brain },
+    { label: "Stack", value: "Python, FastAPI, Next.js", icon: Layers },
+    { label: "Goal", value: "AI Engineer Internship", icon: Target },
   ], []);
 
   const focusChips = useMemo(() => [
-    { label: "Applied ML", icon: Brain },
-    { label: "Preprocessing", icon: GraduationCap },
-    { label: "Evaluation", icon: Brain },
-    { label: "AI Integration", icon: Code2 },
+    { label: "Machine Learning", icon: Brain },
+    { label: "Data Processing", icon: GraduationCap },
+    { label: "Model Evaluation", icon: Brain },
+    { label: "AI System Integration", icon: Code2 },
   ], []);
 
   const learning = useMemo(() => [
-    { label: "Feature engineering", icon: Brain },
-    { label: "Validation logic", icon: GraduationCap },
-    { label: "Clean deployment", icon: Code2 },
+    { label: "Feature Engineering", icon: Brain },
+    { label: "Model Evaluation", icon: GraduationCap },
+    { label: "AI Deployment", icon: Code2 },
   ], []);
 
   return (
@@ -191,7 +191,17 @@ export default function About() {
             <div className="space-y-4">
 
               <p className="text-sm leading-relaxed text-slate-600 font-medium italic">
-                A Computer Science student at Dian Nuswantoro University who focuses on Applied Machine Learning. Has a strong interest in building practical, deployment-ready AI-based applications.
+                I am a Computer Science student at Dian Nuswantoro University with a strong focus on Artificial Intelligence and Applied Machine Learning.
+                I am passionate about building intelligent systems that transform data into practical solutions and real-world applications.
+              </p>
+
+              <p className="text-sm leading-relaxed text-slate-600 font-medium italic">
+                My interests lie in developing end-to-end AI solutions from data preprocessing and model development to deployment-ready applications.
+                I enjoy exploring how machine learning can be integrated into modern web systems to create scalable and user-centered technology.
+              </p>
+
+              <p className="text-sm leading-relaxed text-slate-600 font-medium italic">
+                Currently, I am strengthening my skills in machine learning engineering, model evaluation, and AI deployment while preparing for opportunities as an AI Engineer.
               </p>
 
               <div className="flex flex-wrap gap-1.5">

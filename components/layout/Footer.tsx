@@ -55,10 +55,10 @@ export default function Footer() {
   const year = 2026;
 
   const links: LinkItem[] = useMemo(() => [
-    { label: "Email", href: "mailto:maulida.cahya@example.com", icon: Mail },
-    { label: "LinkedIn", href: "https://linkedin.com/in/maulidacy", icon: Linkedin, external: true },
+    { label: "Email", href: "mailto:cahyamaulida011.com", icon: Mail },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/maulidacahyakurnia", icon: Linkedin, external: true },
     { label: "GitHub", href: "https://github.com/maulidacy", icon: Github, external: true },
-    { label: "CV.pdf", href: "/cv.pdf", icon: FileText }
+    { label: "CV.pdf", href: "/cv_04.pdf", icon: FileText }
   ], []);
 
   return (

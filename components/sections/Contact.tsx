@@ -107,7 +107,7 @@ export default function Contact() {
 
           <motion.a
             variants={itemVariants}
-            href="mailto:maulida.cahya@example.com"
+            href="mailto:cahyamaulida011@gmail.com"
             className="group relative md:col-span-4 flex flex-col justify-between overflow-hidden rounded-md border border-blue-900 bg-[#0d1321] p-6 transition-all hover:border-blue-700 shadow-2xl"
           >
 
@@ -153,7 +153,8 @@ export default function Contact() {
 
           <motion.a
             variants={itemVariants}
-            href="/cv.pdf"
+            href="/cv_04.pdf"
+            download="Maulida_Cahya_Kurnia_CV.pdf"
             className="group md:col-span-2 flex flex-col items-center justify-center rounded-md border border-slate-800 bg-[#0a0f1a] p-6 text-center transition-all hover:border-slate-600 shadow-xl"
           >
 
@@ -172,7 +173,7 @@ export default function Contact() {
           </motion.a>
 
           <SocialCard
-            href="https://linkedin.com/in/maulidacy"
+            href="https://www.linkedin.com/in/maulidacahyakurnia"
             icon={Linkedin}
             label="LinkedIn"
           />
@@ -200,7 +201,7 @@ export default function Contact() {
           <div className="flex items-center gap-4">
 
             <span className="hidden sm:inline">
-              Semarang, ID (GMT+7)
+              Grobogan, ID (GMT+7)
             </span>
 
             <div className="flex items-center gap-1">

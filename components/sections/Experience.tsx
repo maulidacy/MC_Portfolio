@@ -28,7 +28,7 @@ export default function Experience() {
       org: "DBS Foundation x Dicoding",
       type: "work",
       location: "Remote",
-      period: "2025 - Present",
+      period: "2026 - Present",
       highlights: [
         "Completed an intensive independent study focused on applied Machine Learning and AI engineering.",
         "Designed and implemented end-to-end ML pipelines including data preprocessing, model training, evaluation (precision, recall, F1-score), and optimization.",
@@ -42,7 +42,7 @@ export default function Experience() {
       org: "Hacktiv8 x IBM SkillsBuild",
       type: "org",
       location: "Indonesia",
-      period: "2024",
+      period: "2025",
       highlights: [
         "Developed an AI-based solution for a real-world case study using an end-to-end development approach.",
         "Independently contributed to model design and technical implementation.",

@@ -114,8 +114,8 @@ export default function Navbar() {
 
             <div
               className={`relative overflow-hidden border transition-all duration-500 shadow-2xl ${isScrolled
-                  ? "rounded-xl border-slate-800 bg-[#0a0f1a]/90 backdrop-blur-xl"
-                  : "rounded-md border-transparent bg-transparent"
+                ? "rounded-xl border-slate-800 bg-[#0a0f1a]/90 backdrop-blur-xl"
+                : "rounded-md border-transparent bg-transparent"
                 }`}
             >
 
@@ -157,8 +157,8 @@ export default function Navbar() {
                       key={l.id}
                       href={`#${l.id}`}
                       className={`relative z-10 px-3 py-1.5 text-[11px] font-mono font-bold uppercase tracking-tight transition-colors duration-300 ${activeId === l.id
-                          ? "text-white"
-                          : "text-slate-500 hover:text-slate-300"
+                        ? "text-white"
+                        : "text-slate-500 hover:text-slate-300"
                         }`}
                     >
                       <span
@@ -185,11 +185,12 @@ export default function Navbar() {
                 <div className="flex items-center gap-3">
 
                   <a
-                    href="/cv.pdf"
+                    href="/cv_04.pdf"
+                    download="Maulida_Cahya_Kurnia_CV.pdf"
                     className="hidden items-center gap-2 rounded border border-slate-700 bg-slate-800/40 px-3 py-1.5 font-mono text-[10px] font-bold text-slate-300 transition-all hover:border-blue-900 hover:bg-blue-900/20 hover:text-white md:flex"
                   >
                     <Command size={12} />
-                    RESUME.PDF
+                    DOWNLOAD CV
                   </a>
 
                   <button
@@ -219,8 +220,8 @@ export default function Navbar() {
                           href={`#${l.id}`}
                           onClick={() => setIsMobileMenuOpen(false)}
                           className={`flex items-center justify-between rounded px-4 py-3 text-xs font-bold uppercase tracking-widest transition-all ${activeId === l.id
-                              ? "bg-blue-900/30 text-blue-400 border-l-2 border-blue-500"
-                              : "text-slate-500 hover:bg-slate-800/50 hover:text-white"
+                            ? "bg-blue-900/30 text-blue-400 border-l-2 border-blue-500"
+                            : "text-slate-500 hover:bg-slate-800/50 hover:text-white"
                             }`}
                         >
                           {l.label}
